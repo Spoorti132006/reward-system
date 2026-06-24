@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reward System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Reward System</h1>
+
+<!-- Transaction Form -->
+<h2>Add Transaction</h2>
+
+<input type="text" id="request_id" placeholder="Request ID">
+<input type="text" id="user_id" placeholder="User ID">
+<input type="number" id="amount" placeholder="Amount">
+
+<button onclick="addTransaction()">Submit</button>
+
+<p id="transactionResult"></p>
+
+<hr>
+
+<!-- Summary -->
+<h2>User Summary</h2>
+
+<input type="text" id="summary_user" placeholder="User ID">
+
+<button onclick="getSummary()">Get Summary</button>
+
+<div id="summaryResult"></div>
+
+<hr>
+
+<!-- Ranking -->
+<h2>Ranking</h2>
+
+<button onclick="getRanking()">Show Ranking</button>
+
+<div id="rankingResult"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
