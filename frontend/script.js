@@ -8,6 +8,12 @@ async function addTransaction() {
     const user_id = document.getElementById("user_id").value;
     const amount = Number(document.getElementById("amount").value);
 
+    console.log({
+        request_id,
+        user_id,
+        amount
+    });
+
     const response = await fetch(`${BASE_URL}/transaction`, {
         method: "POST",
         headers: {
@@ -21,6 +27,8 @@ async function addTransaction() {
     });
 
     const data = await response.json();
+
+    console.log(data);
 
     document.getElementById("transactionResult").innerHTML =
         JSON.stringify(data);
