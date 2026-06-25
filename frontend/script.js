@@ -1,18 +1,10 @@
 const BASE_URL = "https://reward-system-vyze.onrender.com";
 
-
 // Add Transaction
 async function addTransaction() {
-
     const request_id = "tx" + Date.now();
     const user_id = document.getElementById("user_id").value;
     const amount = Number(document.getElementById("amount").value);
-
-    console.log({
-        request_id,
-        user_id,
-        amount
-    });
 
     const response = await fetch(`${BASE_URL}/transaction`, {
         method: "POST",
@@ -28,16 +20,12 @@ async function addTransaction() {
 
     const data = await response.json();
 
-    console.log(data);
-
     document.getElementById("transactionResult").innerHTML =
         JSON.stringify(data);
 }
 
-
 // Get Summary
 async function getSummary() {
-
     const userId = document.getElementById("summary_user").value;
 
     const response = await fetch(`${BASE_URL}/summary/${userId}`);
@@ -51,16 +39,14 @@ async function getSummary() {
     `;
 }
 
-
 // Get Ranking
 async function getRanking() {
-
     const response = await fetch(`${BASE_URL}/ranking`);
 
     const data = await response.json();
 
     let html = `
-        <table>
+        <table border="1">
             <tr>
                 <th>Rank</th>
                 <th>User ID</th>
@@ -69,7 +55,6 @@ async function getRanking() {
     `;
 
     data.forEach(user => {
-
         html += `
             <tr>
                 <td>${user.rank}</td>
